@@ -1,0 +1,192 @@
+GIT NOTES
+
+- pwd = shows you the current path
+
+- git init
+
+- git add
+
+- git add . = dot adds everything in the directory
+
+- git commit
+
+- git log
+
+- git help log = brings up the manual page
+
+
+GIT LOG
+
+- git log -n 1 = will only show you 1 recent commits
+- git log --since=2015-04-19, --until=2015-04-19 = shows you the log by date
+- git log --author="Kate"
+- git log --grep="Init"
+- git log [SHA#..SHA# --oneline] = shows only the range of those commits
+- git log [SHA#.. index.hthml] = only gives you the commits that affected that particular file
+- git log -p = shows the pagination of the files
+- git log -p [SHA#.. index.html] = shows the exact change in the file
+- git log --stat --summary = gives you the summary of the quantity changed
+- git log --format=oneline
+- git log --graph = shows branches and merges
+- git log --online --graph --all --decorate = shows all the branches that took place
+
+
+- git status = lets you know the relationship in the three-tree (repository, stating index, working area)
+
+- git commit -m "Add file"  = This adds a message to Git
+
+
+
+GIT DIFF
+
+- git diff = shows the differences between files, if you make any edits to them. 
+- git diff --staged = shows you the edits that were made in the first repository
+- git diff --color-words [file name] = shows you the exact edits made
+
+
+
+GIT RM (REMOVE)
+
+- git rm = completely removes a file (after you remove a file, you have to use 'git commit -m'). If you drag the file into the trash first and then call 'git rm', the file will stay in your trash. 
+
+- git rm --cached = tells Git to remove the file from the staging index.
+
+- If you changed the name of a file, Bash will show you that you deleted a file, and added a new file (You will have to use 'git add', and then 'git rm').
+
+
+
+GIT MV
+
+- git mv = you can chance the name from one file to another (ex. git mv file1 file2)
+- moving a file into a folder - Folder name is first_directory (ex. git mv file_to_delete first_directory)
+
+- cd .. = goes backward a directory 
+
+- ls -la = shows you a list of the files in the current directory you are in
+
+- git commit -a = add to the staging index and committing it at the same time (only works well for modifications, not added or deleted files)
+
+- If you use mv to edit a file, you must replace all the files with the new edits.
+
+
+
+GIT CHECKOUT
+
+- git checkout -- [file name - ex. index.html] = undo changes, only talking about the file in the current branch.
+
+- git revert HEAD [file name - ex. resources.html] = this is to unstage the file name (staging is using 'git add [file name]')
+
+- git commit --amend -m "text here" = This adds the new changes in a file (only can amend recent commit that the HEAD points to)
+
+
+
+GIT RESET
+
+- git reset [commit #] = always moves the HEAD pointer (3 options: soft, mixed, hard)
+- git reset --soft (safest) = does not change staging index or working directory
+- git reset --mixed (default) = changes staging index to match repository(doesn't change working directory)
+- git reset --hard (most dangerous) = changes staging index and working directory to match repository
+
+
+- cat .git/HEAD = tells you where you are right now in the stack
+
+
+- git clean -n  = removes all the untracked files
+
+- git clean -f = this will force it to run
+
+
+- .gitignore = create a special directory in the root =of the file (which files to use for commits, and which files to ignore). Can use ?, *, !, aeiuo, 0-9, trailing slash (ex. assets/videos/, log/*.log, !videos/*.mp4). Ex. [project name] .gitignore
+
+- git add .gitignore
+
+
+- git config --global core.excludesfile~/.gitignore_global = ignore files in every repo on the computer
+
+.gitkeep = If you want Git to track a directory, you have to create an empty file and just put it in the folder you are working in
+
+- touch assets/pdf/ = accesses the file gently
+
+
+
+TREE-ISH
+
+- Tree-ish = -HEAD, -master^ or -HEAD^^ (grandparent - moving up twice in the tree)
+- Tree-ish shows you what commits were made before (^ shows one commit up, ^^ shows 2 previous commits)
+- Images in the tree-ish are called 'blob'
+- git ls-tree (this is to list out the tree) 
+- git help ls-tree (if you need more info on how to use it)
+- Ex. git ls-tree HEAD, git ls-tree masters^ assets/
+
+- git log --oneline = compressed version of commits
+- git log --oneline -3
+- git show [SHA#] = shows you what changed (before and after)
+
+
+- git diff --cached 
+- git diff [SHA] = shows you the exact changes
+- git diff --stat --summary [SHA]..HEAD
+- git diff -w [SHA]..HEAD
+
+
+
+BRANCHES
+
+- git branch = shows you all of the branches that are in your machine
+- git branch new_feature = this creates the new branch
+- Ex. cat .git/refs/heads/new_feature = will show you the current commit that you are on
+
+- git checkout new_feature = this will switch you to the new branch
+- git checkout -b = commits and branch out at the same time
+- git branch --merged = all of the branches here
+- git branch -m new_feature seo_title = this renames the branch to seo_title
+- git branch -d branch_to_delete = this deletes the branch
+- git checkout branch_to_delete = moves you to the branch, so you can't delete it
+
+- __git_ps1
+
+
+
+STASHING
+
+- git stash save "changed page title" (this just saves the new info before commiting it - it's like a storage) 
+
+- git stash list = shows us a list of what is in the stash
+
+- git stash show stash@{0} = shows the diff stat (what changed in the file)
+
+- git stash show -p stash@{0} = shows something similar to a commit
+
+- git stash pop stash@{0} = takes it out of the stash and back into the working directory
+
+- git stash apply = leaves a copy in the stash
+
+- git stash drop stash@{0} = delete something from the stash
+
+- git stash clear = clears out your whole stash (this can be dangerous)
+
+
+
+REMOTES
+
+- git push = push the codes onto the remote server
+
+- git fetch = sync up the version on the remote server and my own version (but not in the master branch) 
+
+- git merge = taking the codes from 'fetch' and syncing it with our own codes
+
+- git remote = shows us all of the remotes we know about
+
+- git remote add <alias> <url>
+
+- git remote -v
+
+- If you want to see what the remote is, you can type 'cat .git/config' to check.
+
+- git remote rm <alias - ex. origin> = this is to remove a remote
+
+- git push -u origin master = this is pushing the remote into the repository
+
+- ls -la .git/refs/remotes = tells you the list of remotes
+
+- git branch -r, git branch -a 
