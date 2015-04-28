@@ -261,3 +261,57 @@ CHECKOUT REMOTE BRANCHES
 - fetch > merge > push (make sure everyones' changes is taken into account)
 
 
+
+DELETE
+
+- OLD way = git push origin :non_tracking (: deletes the branch)
+
+- git branch -r = shows you the branches available
+
+- NEW way = git push origin --delete non_tracking
+
+
+
+
+COLLABORATIONS
+
+- fork = making a copy of the project and putting it onto your own Github
+
+- git clone 
+
+- pull request = submit a message with a request and talk about the changes. If it is accepted, the codes will be accepted into the main project.
+
+
+Collab workflow: 
+
+- git checkout master
+- git fetch
+- git merge origin/master
+- git checkout -b feedback_form ('origin/feedback_form')
+- (git log)
+- (git show <commit #>)
+- git add feedback.html
+- git commit -m "message"
+- git fetch
+- git push -u origin feedback_form (-u makes it a tracking branch)
+
+- git log -p = patch (shows everything that was changed)
+
+
+
+GIT ALIAS
+
+- To add aliases: git config --global alias.st status "status" (st is the short cut)
+- cat ../../.gitconfig = you can see the alias listed there
+- Now, git st is the short cut. 
+
+
+Other Aliases (but it could be anything): 
+
+- co = checkout
+- ci = commit
+- br = branch
+- df = diff
+- dfs = diff --staged
+- logg = "log --graph --decorate --oneline --abbrev-commit --all"
+
