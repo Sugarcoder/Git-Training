@@ -66,6 +66,9 @@ GIT MV
 
 - git commit -a = add to the staging index and committing it at the same time (only works well for modifications, not added or deleted files)
 
+- git commit -am "<message here>" = This commits all of the files
+
+
 - If you use mv to edit a file, you must replace all the files with the new edits.
 
 
@@ -190,3 +193,71 @@ REMOTES
 - ls -la .git/refs/remotes = tells you the list of remotes
 
 - git branch -r, git branch -a 
+
+
+CLONE
+
+- git clone <url from Github> 
+- git clone <url> <random name if want another copy - ex. lynda_version> 
+
+
+TRACKING
+
+- git push -u origin master = -u is the tracking the branch remotely
+- When we git clone, it tracks the remote branch
+- cat .git/config = tracks the current branch you are on
+- git branch non_tracking
+- git push origin non_tracking = pushes this branch into Git
+- git config branch.<file name>.merge.refs/heads/master
+- Ex. git config branch.non_tracking.merge.refs/heads/master = creates the branch
+
+- git push = pushes all of the changes up to the remote branch
+
+- git log --oneline origin/master -3 = shows you what was done
+
+
+- git fetch = synchronizes the files between branches (stay updated with the remote branch)
+- git fetch <name of file> (ex. git fetch origin)
+
+- git branch -r = shows you the branches that we pulled down from the main branch
+
+- Guidelines to follow:
+1. Always fetch before you work (find out what is on the remote repo)
+2. Fetch before you push
+3. Fetch often
+
+
+MERGE
+
+- git diff origin/master..master = shows you the difference between branches
+
+- git merge origin/master
+
+- When you do a merge, we merge it into the origin master (this changes the main file)
+
+- git pull = get fetch + get merge (does everything all in one step) 
+
+Pros and Cons to using git pull:
+- Super convenient (for beginners, it can be confusing. If get pull goes wrong, its hard to fix it) - use git fetch and git merge separtely to get the hang of it first
+
+
+
+CHECKOUT REMOTE BRANCHES
+
+- git branch non_tracking origin/non_tracking = This will track the origin's branch
+
+- git branch -d <branch name> = this will delete the branch 
+
+- git checkout non_tracking origin/non_tracking = you can follow the other branches
+
+- git checkout master = this will go back to the master branch, and whatever you push will go to that remote repository too.
+
+
+
+- Git never does a merge when it is being pushed. 
+
+- git merge origin/master
+
+- fetch > merge > push (make sure everyones' changes is taken into account)
+
+
