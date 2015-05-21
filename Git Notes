@@ -1,21 +1,14 @@
-GIT NOTES
+-------GIT NOTES-------
 
 - pwd = shows you the current path
-
 - git init
-
 - git add
-
 - git add . = dot adds everything in the directory
-
 - git commit
-
 - git log
-
 - git help log = brings up the manual page
 
-
-GIT LOG
+-------GIT LOG-------
 
 - git log -n 1 = will only show you 1 recent commits
 - git log --since=2015-04-19, --until=2015-04-19 = shows you the log by date
@@ -30,22 +23,19 @@ GIT LOG
 - git log --graph = shows branches and merges
 - git log --online --graph --all --decorate = shows all the branches that took place
 
-
 - git status = lets you know the relationship in the three-tree (repository, stating index, working area)
 
 - git commit -m "Add file"  = This adds a message to Git
 
 
-
-GIT DIFF
+-------GIT DIFF-------
 
 - git diff = shows the differences between files, if you make any edits to them. 
 - git diff --staged = shows you the edits that were made in the first repository
 - git diff --color-words [file name] = shows you the exact edits made
 
 
-
-GIT RM (REMOVE)
+------GIT RM (REMOVE)------
 
 - git rm = completely removes a file (after you remove a file, you have to use 'git commit -m'). If you drag the file into the trash first and then call 'git rm', the file will stay in your trash. 
 
@@ -54,8 +44,7 @@ GIT RM (REMOVE)
 - If you changed the name of a file, Bash will show you that you deleted a file, and added a new file (You will have to use 'git add', and then 'git rm').
 
 
-
-GIT MV
+-------GIT MV-------
 
 - git mv = you can chance the name from one file to another (ex. git mv file1 file2)
 - moving a file into a folder - Folder name is first_directory (ex. git mv file_to_delete first_directory)
@@ -72,8 +61,7 @@ GIT MV
 - If you use mv to edit a file, you must replace all the files with the new edits.
 
 
-
-GIT CHECKOUT
+--------GIT CHECKOUT--------
 
 - git checkout -- [file name - ex. index.html] = undo changes, only talking about the file in the current branch.
 
@@ -82,8 +70,7 @@ GIT CHECKOUT
 - git commit --amend -m "text here" = This adds the new changes in a file (only can amend recent commit that the HEAD points to)
 
 
-
-GIT RESET
+-------GIT RESET-------
 
 - git reset [commit #] = always moves the HEAD pointer (3 options: soft, mixed, hard)
 - git reset --soft (safest) = does not change staging index or working directory
@@ -92,7 +79,6 @@ GIT RESET
 
 
 - cat .git/HEAD = tells you where you are right now in the stack
-
 
 - git clean -n  = removes all the untracked files
 
@@ -111,8 +97,7 @@ GIT RESET
 - touch assets/pdf/ = accesses the file gently
 
 
-
-TREE-ISH
+-------TREE-ISH--------
 
 - Tree-ish = -HEAD, -master^ or -HEAD^^ (grandparent - moving up twice in the tree)
 - Tree-ish shows you what commits were made before (^ shows one commit up, ^^ shows 2 previous commits)
@@ -132,8 +117,7 @@ TREE-ISH
 - git diff -w [SHA]..HEAD
 
 
-
-BRANCHES
+-------BRANCHES--------
 
 - git branch = shows you all of the branches that are in your machine
 - git branch new_feature = this creates the new branch
@@ -149,8 +133,7 @@ BRANCHES
 - __git_ps1
 
 
-
-STASHING
+-------STASHING--------
 
 - git stash save "changed page title" (this just saves the new info before commiting it - it's like a storage) 
 
@@ -169,8 +152,7 @@ STASHING
 - git stash clear = clears out your whole stash (this can be dangerous)
 
 
-
-REMOTES
+--------REMOTES-------
 
 - git push = push the codes onto the remote server
 
