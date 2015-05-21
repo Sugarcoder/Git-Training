@@ -177,13 +177,13 @@
 - git branch -r, git branch -a 
 
 
-CLONE
+-------CLONE-------
 
 - git clone <url from Github> 
 - git clone <url> <random name if want another copy - ex. lynda_version> 
 
 
-TRACKING
+-------TRACKING---------
 
 - git push -u origin master = -u is the tracking the branch remotely
 - When we git clone, it tracks the remote branch
@@ -209,7 +209,7 @@ TRACKING
 3. Fetch often
 
 
-MERGE
+-------MERGE-------
 
 - git diff origin/master..master = shows you the difference between branches
 
@@ -224,7 +224,7 @@ Pros and Cons to using git pull:
 
 
 
-CHECKOUT REMOTE BRANCHES
+--------CHECKOUT REMOTE BRANCHES---------
 
 - git branch non_tracking origin/non_tracking = This will track the origin's branch
 
@@ -244,7 +244,7 @@ CHECKOUT REMOTE BRANCHES
 
 
 
-DELETE
+-------DELETE-------
 
 - OLD way = git push origin :non_tracking (: deletes the branch)
 
@@ -253,9 +253,7 @@ DELETE
 - NEW way = git push origin --delete non_tracking
 
 
-
-
-COLLABORATIONS
+-------COLLABORATIONS---------
 
 - fork = making a copy of the project and putting it onto your own Github
 
@@ -264,7 +262,7 @@ COLLABORATIONS
 - pull request = submit a message with a request and talk about the changes. If it is accepted, the codes will be accepted into the main project.
 
 
-Collab workflow: 
+---------Typical Collab Workflow---------- 
 
 - git checkout master
 - git fetch
@@ -281,14 +279,14 @@ Collab workflow:
 
 
 
-GIT ALIAS
+-------GIT ALIAS-------
 
 - To add aliases: git config --global alias.st status "status" (st is the short cut)
 - cat ../../.gitconfig = you can see the alias listed there
 - Now, git st is the short cut. 
 
 
-Other Aliases (but it could be anything): 
+--------OTHER ALIAS (but it could be anything)---------- 
 
 - co = checkout
 - ci = commit
