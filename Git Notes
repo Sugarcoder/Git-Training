@@ -33,14 +33,15 @@
 - git diff = shows the differences between files, if you make any edits to them. 
 - git diff --staged = shows you the edits that were made in the first repository
 - git diff --color-words [file name] = shows you the exact edits made
+- git diff HEAD = shows the differences made
+- git diff --staged = shows the changes you just staged
 
 
 ------GIT RM (REMOVE)------
 
 - git rm = completely removes a file (after you remove a file, you have to use 'git commit -m'). If you drag the file into the trash first and then call 'git rm', the file will stay in your trash. 
-
 - git rm --cached = tells Git to remove the file from the staging index.
-
+- git rm '*.txt' = removes all the '*.txt' files from the disk and staging area
 - If you changed the name of a file, Bash will show you that you deleted a file, and added a new file (You will have to use 'git add', and then 'git rm').
 
 
@@ -129,6 +130,9 @@
 - git branch -m new_feature seo_title = this renames the branch to seo_title
 - git branch -d branch_to_delete = this deletes the branch
 - git checkout branch_to_delete = moves you to the branch, so you can't delete it
+- git branch clean_up = removes all the extra branches
+- git checkout clean_up = takes you to the "clean_up" branch
+
 
 - __git_ps1
 
@@ -212,8 +216,9 @@
 -------MERGE-------
 
 - git diff origin/master..master = shows you the difference between branches
-
 - git merge origin/master
+- git merge clean_up = merging the 'clean_up' file into the master branch
+
 
 - When you do a merge, we merge it into the origin master (this changes the main file)
 
@@ -251,6 +256,9 @@ Pros and Cons to using git pull:
 - git branch -r = shows you the branches available
 
 - NEW way = git push origin --delete non_tracking
+
+- git branch -d clean_up = this will remove the 'clean_up' branch
+
 
 
 -------COLLABORATIONS---------
